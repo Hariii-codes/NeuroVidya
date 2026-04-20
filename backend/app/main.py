@@ -3,10 +3,19 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import auth, assistant, progress, analytics, users, text, games, reading, words, diagrams, learning, spelling, images, reading_coach, story_summariser, ar_game
 from app.core.config import get_settings
+from app.models.models import prisma
 
 settings = get_settings()
 
 app = FastAPI()
+
+@app.on_event("startup")
+async def startup():
+    await prisma.connect()
+
+@app.on_event("shutdown")
+async def shutdown():
+    await prisma.disconnect()
 
 app.add_middleware(
     CORSMiddleware,
