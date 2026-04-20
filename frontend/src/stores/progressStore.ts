@@ -10,13 +10,14 @@ interface ProgressState extends Partial<LearningProgress> {
   checkDailyGoal: () => boolean;
 }
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
+
 export const useProgressStore = create<ProgressState>((set, get) => ({
   isLoading: false,
 
   loadProgress: async () => {
     set({ isLoading: true });
     try {
-      const API_BASE = import.meta.env.VITE_API_BASE_URL || '/api';
       const response = await fetch(`${API_BASE}/progress/overview`);
       if (response.ok) {
         const progress = await response.json();
