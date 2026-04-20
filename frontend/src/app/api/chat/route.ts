@@ -40,7 +40,7 @@ Format your responses with:
 - Short paragraphs (2-3 sentences max)
 - Bullet points for lists
 - Clear headings
-- Encouraging tone`
+- Encouraging tone
 
 Remember: The user may have difficulty with reading, so be encouraging and never critical of mistakes.`
 

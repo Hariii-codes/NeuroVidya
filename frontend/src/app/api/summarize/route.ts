@@ -34,7 +34,7 @@ Length Guide:
 - Very short text (<100 words): 2-3 sentences
 - Short text (100-300 words): 1 paragraph
 - Medium text (300-600 words): 2-3 paragraphs
-- Long text (600+ words): 3-5 paragraphs with headings`
+- Long text (600+ words): 3-5 paragraphs with headings
 
 Remember: The goal is comprehension, not completeness. Better to be simpler than comprehensive.`
 
