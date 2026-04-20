@@ -1,0 +1,349 @@
+/* Dyslexia-First Phonetic Highlighter Component Styles */
+
+.phonetic-highlighter {
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+  line-height: var(--dyslexia-line-height, 1.8);
+  word-spacing: var(--dyslexia-word-spacing, 0.5em);
+  letter-spacing: var(--dyslexia-letter-spacing, 0.15em);
+}
+
+/* ============================================
+   SYLLABLE CHUNKS
+   ============================================ */
+
+.phonetic-syllable {
+  display: inline-block;
+  padding: 0.1em 0.25em;
+  margin: 0 0.05em;
+  border-radius: 0.2em;
+  transition: all 0.15s ease;
+  white-space: pre;
+  cursor: default;
+}
+
+.phonetic-highlighter--interactive .phonetic-syllable {
+  cursor: pointer;
+}
+
+.phonetic-syllable:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.phonetic-syllable--hovered {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+  position: relative;
+}
+
+/* Syllable Colors */
+.phonetic-syllable.color-1 {
+  background-color: var(--syllable-color-1, #DBEAFE);
+}
+
+.phonetic-syllable.color-2 {
+  background-color: var(--syllable-color-2, #D1FAE5);
+}
+
+.phonetic-syllable.color-3 {
+  background-color: var(--syllable-color-3, #FEF3C7);
+}
+
+.phonetic-syllable.color-4 {
+  background-color: var(--syllable-color-4, #EDE9FE);
+}
+
+/* ============================================
+   WORDS
+   ============================================ */
+
+.phonetic-word {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.05em;
+  padding: 0.1em 0.2em;
+  border-radius: 0.3em;
+  transition: background-color 0.15s ease;
+}
+
+.phonetic-word:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.phonetic-word--marked {
+  padding-bottom: 0.1em;
+}
+
+.phonetic-syllable-count {
+  font-size: 0.7em;
+  font-weight: 500;
+  color: var(--dyslexia-text-muted, #9ca3af);
+  margin-left: 0.25em;
+  vertical-align: super;
+}
+
+/* ============================================
+   LEGEND
+   ============================================ */
+
+.phonetic-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+  font-size: 0.9em;
+}
+
+.phonetic-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.phonetic-legend-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+}
+
+.phonetic-legend-dot--easy {
+  background-color: var(--syllable-color-2, #D1FAE5);
+}
+
+.phonetic-legend-dot--medium {
+  background-color: var(--syllable-color-3, #FEF3C7);
+}
+
+.phonetic-legend-dot--hard {
+  background-color: var(--syllable-color-4, #FEE2E2);
+}
+
+/* ============================================
+   SYLLABLE COUNTER
+   ============================================ */
+
+.syllable-counter {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.85em;
+  font-weight: 500;
+}
+
+.syllable-counter--easy {
+  background-color: var(--syllable-color-2, #D1FAE5);
+  color: #065f46;
+}
+
+.syllable-counter--medium {
+  background-color: var(--syllable-color-3, #FEF3C7);
+  color: #92400e;
+}
+
+.syllable-counter--hard {
+  background-color: var(--syllable-color-4, #FEE2E2);
+  color: #991b1b;
+}
+
+.syllable-counter__breakdown {
+  margin-left: 0.5rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* ============================================
+   WORD DIFFICULTY BADGE
+   ============================================ */
+
+.word-difficulty-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+}
+
+/* ============================================
+   CHUNK STYLE SELECTOR
+   ============================================ */
+
+.chunk-style-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+}
+
+.chunk-style-selector__label {
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+.chunk-style-selector__options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.chunk-style-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+  font-size: 1em;
+  font-weight: 500;
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+  color: var(--dyslexia-text-primary, #1f2937);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chunk-style-option:hover:not(:disabled) {
+  border-color: var(--dyslexia-accent, #3b82f6);
+  transform: translateY(-1px);
+}
+
+.chunk-style-option:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chunk-style-option--active {
+  background-color: var(--dyslexia-accent, #3b82f6);
+  color: #ffffff;
+  border-color: var(--dyslexia-accent, #3b82f6);
+}
+
+.chunk-style-option__icon {
+  font-size: 1.25rem;
+}
+
+/* ============================================
+   INTERACTIVE WORD BUILDER
+   ============================================ */
+
+.interactive-word-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+}
+
+.interactive-word-builder h3 {
+  margin: 0;
+  font-size: 1.25em;
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+.word-builder__pool,
+.word-builder__built {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  min-height: 80px;
+  padding: 1rem;
+  border: 2px dashed var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+}
+
+.word-builder__built {
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+}
+
+.word-builder-word {
+  display: flex;
+  gap: 0.1em;
+  padding: 0.5rem;
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.375rem;
+}
+
+.built-word {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--syllable-color-2, #D1FAE5);
+  border: 2px solid var(--dyslexia-accent, #3b82f6);
+  border-radius: 0.375rem;
+  font-weight: 500;
+}
+
+.built-word button {
+  padding: 0.25rem 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.built-word button:hover {
+  opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+  .phonetic-legend {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .chunk-style-selector__options {
+    flex-direction: column;
+  }
+
+  .chunk-style-option {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .word-builder__pool,
+  .word-builder__built {
+    flex-direction: column;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .phonetic-syllable {
+    box-shadow: none !important;
+    transform: none !important;
+  }
+
+  .phonetic-legend,
+  .chunk-style-selector {
+    display: none;
+  }
+
+  .phonetic-word {
+    border-bottom: none;
+  }
+}

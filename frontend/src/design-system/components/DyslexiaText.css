@@ -1,0 +1,141 @@
+/* Dyslexia-First Text Component Styles */
+
+.dyslexia-text {
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+  letter-spacing: var(--dyslexia-letter-spacing, 0.15em);
+  word-spacing: var(--dyslexia-word-spacing, 0.5em);
+  transition: color 0.2s ease, font-size 0.2s ease;
+}
+
+/* Variant Styles */
+.dyslexia-text--body {
+  line-height: var(--dyslexia-line-height, 1.8);
+}
+
+.dyslexia-text--heading {
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.dyslexia-text--subheading {
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.dyslexia-text--caption {
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Size Styles */
+.dyslexia-text--sm {
+  font-size: 0.85em;
+}
+
+.dyslexia-text--md {
+  font-size: 1em;
+}
+
+.dyslexia-text--lg {
+  font-size: 1.15em;
+}
+
+.dyslexia-text--xl {
+  font-size: 1.35em;
+}
+
+/* Weight Styles */
+.dyslexia-text--normal {
+  font-weight: 400;
+}
+
+.dyslexia-text--medium {
+  font-weight: 500;
+}
+
+.dyslexia-text--bold {
+  font-weight: 700;
+}
+
+/* Color Styles */
+.dyslexia-text--primary {
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+.dyslexia-text--secondary {
+  color: var(--dyslexia-text-secondary, #4b5563);
+}
+
+.dyslexia-text--muted {
+  color: var(--dyslexia-text-muted, #9ca3af);
+}
+
+.dyslexia-text--accent {
+  color: var(--dyslexia-accent, #3b82f6);
+}
+
+/* Alignment */
+.dyslexia-text--align-left {
+  text-align: left;
+}
+
+.dyslexia-text--align-center {
+  text-align: center;
+}
+
+.dyslexia-text--align-right {
+  text-align: right;
+}
+
+.dyslexia-text--align-justify {
+  text-align: justify;
+}
+
+/* Line Focus Styles */
+.dyslexia-line-focused {
+  background-color: var(--dyslexia-line-highlight, #fbbf24);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dyslexia-line-dimmed {
+  opacity: calc(1 - var(--dyslexia-line-dim-intensity, 0.3));
+}
+
+/* Syllable Chunking Styles */
+.dyslexia-text .syllable-chunk {
+  display: inline-block;
+  padding: 0.05em 0.15em;
+  margin: 0 0.02em;
+  border-radius: 0.15em;
+  transition: background-color 0.15s ease;
+  white-space: pre;
+}
+
+.dyslexia-text .syllable-chunk.color-1 {
+  background-color: var(--syllable-color-1, #DBEAFE);
+}
+
+.dyslexia-text .syllable-chunk.color-2 {
+  background-color: var(--syllable-color-2, #D1FAE5);
+}
+
+.dyslexia-text .syllable-chunk.color-3 {
+  background-color: var(--syllable-color-3, #FEF3C7);
+}
+
+.dyslexia-text .syllable-chunk.color-4 {
+  background-color: var(--syllable-color-4, #EDE9FE);
+}
+
+/* Responsive text size adjustments */
+@media (max-width: 640px) {
+  .dyslexia-text--heading {
+    font-size: calc(var(--dyslexia-font-size, 22px) * 1.3);
+  }
+
+  .dyslexia-text--subheading {
+    font-size: calc(var(--dyslexia-font-size, 22px) * 1.15);
+  }
+}

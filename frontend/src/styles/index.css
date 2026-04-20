@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dyslexia-Friendly Base Styles */
+@layer base {
+  html {
+    font-family: 'Lexend', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: 0.012em;
+  }
+
+  body {
+    @apply bg-dyslexia-cream text-dyslexia-darkGray;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus indicator for keyboard navigation */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-dyslexia-calmBlue ring-offset-2;
+  }
+}
+
+/* Dyslexia Text Utility */
+@layer components {
+  .text-dyslexia {
+    font-family: 'Lexend', sans-serif;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+  }
+
+  .text-open-dyslexic {
+    font-family: 'OpenDyslexic', sans-serif;
+    letter-spacing: 0.12em;
+    line-height: 1.7;
+  }
+}
+
+/* Theme Classes */
+@layer components {
+  .theme-cream {
+    @apply bg-dyslexia-cream text-dyslexia-darkGray;
+  }
+
+  .theme-dark {
+    @apply bg-gray-900 text-gray-100;
+  }
+
+  .theme-pastel-blue {
+    @apply bg-dyslexia-pastelBlue text-dyslexia-darkGray;
+  }
+
+  .theme-pastel-green {
+    @apply bg-dyslexia-pastelGreen text-dyslexia-darkGray;
+  }
+
+  .theme-light-yellow {
+    @apply bg-dyslexia-lightYellow text-dyslexia-darkGray;
+  }
+}
+
+/* Loading Spinner - Calm, non-distracting */
+@layer components {
+  .spinner {
+    @apply w-12 h-12 border-4 border-dyslexia-calmBlue border-t-transparent rounded-full animate-spin;
+  }
+}
+
+/* Error Message - Dyslexia-friendly */
+@layer components {
+  .error-message {
+    @apply bg-dyslexia-softOrange bg-opacity-20 border-l-4 border-dyslexia-softOrange p-4 rounded;
+  }
+
+  .error-message p {
+    @apply my-1;
+  }
+}

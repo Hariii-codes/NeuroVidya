@@ -1,0 +1,209 @@
+/* Quick Settings Toolbar - Floating Accessibility Panel */
+
+.quick-settings-toolbar {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+}
+
+/* Main Quick Settings Button */
+.quick-settings-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 0;
+  background-color: var(--dyslexia-accent, #3b82f6);
+  color: #ffffff;
+  border: 3px solid var(--dyslexia-text-primary, #1f2937);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1.5rem;
+}
+
+.quick-settings-button:hover {
+  background-color: var(--dyslexia-accent-hover, #2563eb);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.quick-settings-button:focus-visible {
+  outline: 3px solid var(--dyslexia-text-primary, #1f2937);
+  outline-offset: 2px;
+}
+
+.quick-settings-icon {
+  display: block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Expanded Panel */
+.quick-settings-panel {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 280px;
+  max-width: calc(100vw - 4rem);
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  border: 3px solid var(--dyslexia-text-primary, #1f2937);
+  border-radius: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Panel Header */
+.quick-settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid var(--dyslexia-text-secondary, #4b5563);
+}
+
+.quick-settings-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+.quick-settings-close {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--dyslexia-text-secondary, #4b5563);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease;
+}
+
+.quick-settings-close:hover {
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+/* Toggle Buttons Grid */
+.quick-settings-toggles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.quick-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+  font-size: 0.9em;
+}
+
+.quick-toggle:hover {
+  border-color: var(--dyslexia-accent, #3b82f6);
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+}
+
+.quick-toggle:focus-visible {
+  outline: 3px solid var(--dyslexia-accent, #3b82f6);
+  outline-offset: 2px;
+}
+
+.quick-toggle--active {
+  background-color: var(--dyslexia-accent, #3b82f6);
+  border-color: var(--dyslexia-accent, #3b82f6);
+  color: #ffffff;
+}
+
+.quick-toggle__icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.quick-toggle__label {
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Summary Section */
+.quick-settings-summary {
+  display: flex;
+  justify-content: space-around;
+  padding: 0.75rem 1rem;
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+  border-top: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.quick-settings-summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85em;
+}
+
+.quick-settings-summary-item span {
+  color: var(--dyslexia-text-secondary, #4b5563);
+}
+
+.quick-settings-summary-item strong {
+  font-weight: 600;
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .quick-settings-toolbar {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .quick-settings-panel {
+    width: 260px;
+    bottom: 70px;
+  }
+
+  .quick-settings-toggles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .quick-settings-button,
+  .quick-settings-panel,
+  .quick-toggle {
+    transition: none;
+  }
+
+  .quick-settings-panel {
+    animation: none;
+  }
+}
