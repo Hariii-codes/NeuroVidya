@@ -9,22 +9,7 @@ settings = get_settings()
 
 app = FastAPI()
 
-@app.on_event("startup")
-async def startup():
-    # Auto-download Prisma binary if not present
-    try:
-        await prisma.connect()
-    except Exception as e:
-        print(f"Database connection warning: {e}")
-        # Continue without database - API endpoints will handle connection errors
-
-@app.on_event("shutdown")
-async def shutdown():
-    try:
-        await prisma.disconnect()
-    except:
-        pass
-
+# Add CORS middleware FIRST (before routes)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -37,6 +22,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Startup events
+@app.on_event("startup")
+async def startup():
+    try:
+        await prisma.connect()
+    except Exception as e:
+        print(f"Database connection warning: {e}")
+
+@app.on_event("shutdown")
+async def shutdown():
+    try:
+        await prisma.disconnect()
+    except:
+        pass
+
+# Routes
 app.include_router(auth.router, prefix="/api/auth", tags=["authentication"])
 app.include_router(users.router, prefix="/api/users", tags=["users"])
 app.include_router(text.router, prefix="/api/text", tags=["text"])
@@ -54,11 +55,10 @@ app.include_router(reading_coach.router, prefix="/api/reading-coach", tags=["rea
 app.include_router(story_summariser.router, prefix="/api/story-summariser", tags=["story-summariser"])
 app.include_router(ar_game.router, prefix="/api/ar-game", tags=["ar-game"])
 
-
+# Health check endpoints
 @app.get("/")
 async def root():
     return {"message": "NeuroVidya API", "status": "healthy"}
-
 
 @app.get("/health")
 async def health():
