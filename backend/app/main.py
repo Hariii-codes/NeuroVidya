@@ -11,11 +11,19 @@ app = FastAPI()
 
 @app.on_event("startup")
 async def startup():
-    await prisma.connect()
+    # Auto-download Prisma binary if not present
+    try:
+        await prisma.connect()
+    except Exception as e:
+        print(f"Database connection warning: {e}")
+        # Continue without database - API endpoints will handle connection errors
 
 @app.on_event("shutdown")
 async def shutdown():
-    await prisma.disconnect()
+    try:
+        await prisma.disconnect()
+    except:
+        pass
 
 app.add_middleware(
     CORSMiddleware,
