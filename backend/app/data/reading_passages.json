@@ -1,0 +1,94 @@
+{
+  "passages": [
+    {
+      "id": "passage_001",
+      "title": "The Little Seed",
+      "text": "A little seed sleeps in the soil. The sun warms the ground. Rain falls gently. The seed wakes up. A tiny green shoot reaches for the sky.",
+      "readingLevel": "elementary",
+      "category": "nature",
+      "difficultyScore": 1,
+      "wordCount": 35
+    },
+    {
+      "id": "passage_002",
+      "title": "Water Drops",
+      "text": "Water falls from clouds as rain. It flows into rivers. Rivers carry water to the ocean. The sun warms the ocean water. Water rises as vapor and forms clouds.",
+      "readingLevel": "elementary",
+      "category": "nature",
+      "difficultyScore": 2,
+      "wordCount": 38
+    },
+    {
+      "id": "passage_003",
+      "title": "Day and Night",
+      "text": "The Earth spins like a top. One side faces the sun. It is daytime there. The other side faces away. It is night there. As Earth spins, day becomes night and night becomes day.",
+      "readingLevel": "middle",
+      "category": "science",
+      "difficultyScore": 3,
+      "wordCount": 48
+    },
+    {
+      "id": "passage_004",
+      "title": "Plant Food",
+      "text": "Plants make their own food. They use sunlight, water, and air. The leaves catch sunlight. The roots drink water. Tiny holes in leaves take in air. The plant turns these into sugar.",
+      "readingLevel": "middle",
+      "category": "science",
+      "difficultyScore": 4,
+      "wordCount": 47
+    },
+    {
+      "id": "passage_005",
+      "title": "The Moon's Journey",
+      "text": "The moon travels around Earth. It takes about twenty-seven days. Sometimes the moon looks full. Sometimes it looks like a banana. The moon's light comes from the sun.",
+      "readingLevel": "middle",
+      "category": "science",
+      "difficultyScore": 5,
+      "wordCount": 42
+    },
+    {
+      "id": "passage_006",
+      "title": "Photosynthesis",
+      "text": "Plants use sunlight to make food. This process is called photosynthesis. Chlorophyll in leaves captures sunlight. The plant combines water and carbon dioxide. It produces glucose and oxygen.",
+      "readingLevel": "high",
+      "category": "science",
+      "difficultyScore": 6,
+      "wordCount": 38
+    },
+    {
+      "id": "passage_007",
+      "title": "The Water Cycle",
+      "text": "Water continuously moves through the environment. The sun heats surface water, causing evaporation. Water vapor rises and cools, forming clouds. Precipitation returns water to Earth, completing the cycle.",
+      "readingLevel": "high",
+      "category": "science",
+      "difficultyScore": 7,
+      "wordCount": 39
+    },
+    {
+      "id": "passage_008",
+      "title": "A Friendly Dog",
+      "text": "Max is a friendly dog. He has soft brown fur. Max likes to play in the park. He runs fast and jumps high. His favorite toy is a bright red ball.",
+      "readingLevel": "elementary",
+      "category": "daily",
+      "difficultyScore": 1,
+      "wordCount": 38
+    },
+    {
+      "id": "passage_009",
+      "title": "School Morning",
+      "text": "The school bus arrives at seven forty-five. Children line up to board. They find their seats and say hello to friends. The bus drives through the neighborhood. It arrives at school at eight fifteen.",
+      "readingLevel": "middle",
+      "category": "daily",
+      "difficultyScore": 3,
+      "wordCount": 42
+    },
+    {
+      "id": "passage_010",
+      "title": "Ancient Egypt",
+      "text": "Ancient Egyptians built pyramids as tombs for pharaohs. The Great Pyramid of Giza required over two million stone blocks. Egyptians developed hieroglyphics, a writing system using pictures and symbols.",
+      "readingLevel": "high",
+      "category": "history",
+      "difficultyScore": 7,
+      "wordCount": 41
+    }
+  ]
+}

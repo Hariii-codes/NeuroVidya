@@ -1,0 +1,358 @@
+// backend/prisma/schema.prisma
+generator client {
+  provider = "prisma-client-py"
+  output   = "../app/models/prisma_client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// User & Authentication
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  name         String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  preferences ReadingPreferences?
+  progress    LearningProgress[]
+  gameScores  GameScore[]
+  activities  Activity[]
+
+  // New relations for AI modules
+  readingSessions      ReadingSession[]
+  spellingErrors       SpellingError[]
+  userProfile          UserProfile?
+  userWordHistory      UserWordHistory[]
+  dailyProgress        DailyProgress[]
+  skillMastery         SkillMastery[]
+  conceptDiagrams      ConceptDiagram[]
+  readingCoachSessions ReadingCoachSession[]
+}
+
+model ReadingPreferences {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Font settings
+  font          String @default("Lexend")
+  fontSize      Int    @default(22)
+  letterSpacing Float  @default(0.15)
+  lineHeight    Float  @default(1.8)
+
+  // Theme
+  theme String @default("cream")
+
+  // Accessibility
+  focusMode   Boolean @default(false)
+  speechSpeed Float   @default(1.0)
+
+  // Dyslexia-specific: Text Display
+  wordSpacing Float @default(0.5)
+
+  // Dyslexia-specific: Reading Aids
+  lineFocusEnabled        Boolean @default(false)
+  lineFocusColor          String  @default("#4CAF50")
+  lineDimIntensity        Float   @default(0.3)
+  lineFocusAutoScroll     Boolean @default(false)
+  phoneticChunkingEnabled Boolean @default(false)
+  chunkStyle              String  @default("syllables")
+  useAIForChunking        Boolean @default(false)
+
+  // Dyslexia-specific: Audio Settings
+  ttsAlwaysVisible Boolean @default(false)
+  wordByWordMode   Boolean @default(false)
+  voiceSelection   String  @default("default")
+
+  // Dyslexia-specific: Visual Theme
+  accentColor   String @default("#2196F3")
+  contrastLevel String @default("normal")
+
+  // Dyslexia-specific: Preset Level
+  presetLevel String @default("custom")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LearningProgress {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Metrics
+  readingSpeed     Int?
+  spellingAccuracy Float?
+  gamesCompleted   Int    @default(0)
+  totalTimeMinutes Int    @default(0)
+
+  // Streaks
+  currentStreak    Int       @default(0)
+  longestStreak    Int       @default(0)
+  lastActivityDate DateTime?
+
+  // Daily progress
+  todayReadingTime Int @default(0)
+  todayWordsRead   Int @default(0)
+
+  // Reading Coach specific metrics
+  readingCoachSessionCount Int                   @default(0)
+  pronunciationAccuracy    Float? // Average across sessions
+  improvedWords            String? // JSON string to track words that improved
+  readingCoachSessions     ReadingCoachSession[] // NEW - relation to sessions
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GameScore {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  gameType  String // WORD_IMAGE_MATCHING, LETTER_RECOGNITION, etc.
+  score     Int
+  accuracy  Float?
+  timeTaken Int?
+
+  createdAt DateTime @default(now())
+}
+
+model Activity {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  activityType String // READ, SIMPLIFY_TEXT, SPELL_CHECK, etc.
+  description  String
+  metadata     String?
+
+  createdAt DateTime @default(now())
+}
+
+// ============================================
+// 🧠 MODULE 1: Reading Difficulty Analyzer
+// ============================================
+
+model ReadingSession {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Text metadata
+  textId      String
+  textContent String?
+
+  // Reading metrics
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+
+  // Calculated metrics
+  wpm             Float? // Words per minute
+  difficultyScore Int?   @default(0) // 0-100
+
+  readingEvents ReadingEvent[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model ReadingEvent {
+  id        String         @id @default(cuid())
+  sessionId String
+  session   ReadingSession @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+
+  // Event data
+  eventType      String // WORD_CLICK, PAUSE, COMPLETION, REREAD
+  wordIndex      Int?
+  paragraphIndex Int?
+  duration       Float? // seconds
+
+  // Context
+  text String?
+
+  createdAt DateTime @default(now())
+}
+
+// ============================================
+// 🧠 MODULE 2: Dyslexia Error Pattern Detector
+// ============================================
+
+model SpellingError {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Error data
+  errorWord   String
+  correctWord String
+  errorType   String // LETTER_SWAP, MISSING_VOWEL, EXTRA_LETTER, REVERSAL
+  context     String? // surrounding text
+
+  // Learning metadata
+  timesSeen  Int       @default(1)
+  lastSeenAt DateTime  @default(now())
+  masteredAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserProfile {
+  id     String @id @default(cuid())
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Pattern summary
+  commonErrors       String // JSON array of common error types
+  strugglingPatterns String // JSON array of specific patterns (e.g., "b/d confusion")
+  averageDifficulty  Float  @default(0.0)
+
+  // Recommendations
+  targetExercises String // JSON array of recommended exercise types
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============================================
+// 🧠 MODULE 3: AI Word Difficulty Predictor
+// ============================================
+
+model WordDifficulty {
+  id            String @id @default(cuid())
+  word          String @unique
+  length        Int
+  syllableCount Int
+  phoneticScore Float  @default(0.0)
+
+  // Community error rate
+  globalErrorRate Float @default(0.0)
+
+  // Difficulty score (0-10)
+  difficultyScore Float @default(0.0)
+
+  // Linguistic data
+  pronunciation String?
+  simpleMeaning String?
+  syllables     String? // JSON array of syllables
+
+  userHistory UserWordHistory[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model UserWordHistory {
+  id     String         @id @default(cuid())
+  userId String
+  wordId String
+  word   WordDifficulty @relation(fields: [wordId], references: [id])
+  user   User           @relation(fields: [userId], references: [id])
+
+  // User-specific data
+  timesSeen    Int      @default(0)
+  timesCorrect Int      @default(0)
+  timesErrored Int      @default(0)
+  lastSeenAt   DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// ============================================
+// 🧠 MODULE 4: Visual Concept Generator
+// ============================================
+
+model ConceptDiagram {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Concept data
+  conceptName String
+  description String
+  nodes       String // JSON array of diagram nodes
+  edges       String // JSON array of diagram edges
+
+  // AI generation metadata
+  generatedAt DateTime @default(now())
+
+  createdAt DateTime @default(now())
+}
+
+// ============================================
+// 🧠 MODULE 5: Learning Analytics Engine
+// ============================================
+
+model DailyProgress {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Date
+  date DateTime @default(now())
+
+  // Metrics
+  readingTime      Int   @default(0) // seconds
+  wordsRead        Int   @default(0)
+  spellingAccuracy Float @default(0.0)
+  gamesCompleted   Int   @default(0)
+  studyTime        Int   @default(0) // seconds
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, date])
+}
+
+model SkillMastery {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  // Skill data
+  skillType String // READING_SPEED, SPELLING, PHONETICS, etc.
+  skillName String // e.g., "b_d_distinction", "long_words"
+
+  masteryLevel Float    @default(0.0) // 0-1
+  practicedAt  DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, skillName])
+}
+
+// ============================================
+// 🧠 MODULE 6: Reading Coach (Pronunciation)
+// ============================================
+
+model ReadingCoachSession {
+  id     String @id @default(cuid())
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  passageText    String
+  spokenText     String
+  accuracyScore  Float
+  wordsCorrect   Int
+  wordsIncorrect Int
+
+  errors           String // JSON string of {word, expected, actual, position}
+  phoneticFeedback String? // JSON string of additional phonetic analysis
+
+  // Links to existing progress tracking
+  learningProgressId String?
+  learningProgress   LearningProgress? @relation(fields: [learningProgressId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([createdAt])
+}
