@@ -12,6 +12,7 @@ const actions: QuickAction[] = [
   { icon: '📖', label: 'Reading', path: '/reading', color: 'bg-dyslexia-calmBlue' },
   { icon: '🎤', label: 'Reading Coach', path: '/reading-coach', color: 'bg-blue-600' },
   { icon: '📚', label: 'Story Summariser', path: '/story-summariser', color: 'bg-purple-600' },
+  { icon: '🎯', label: 'Phonics Tutor', path: '/phonics-tutor', color: 'bg-pink-600' },
   { icon: '📱', label: 'AR Game', path: '/ar-game', color: 'bg-indigo-600' },
   { icon: '🎮', label: 'Games', path: '/games', color: 'bg-dyslexia-softGreen' },
   { icon: '🤖', label: 'Ask AI', path: '/assistant', color: 'bg-purple-500' },

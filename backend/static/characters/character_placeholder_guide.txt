@@ -1,0 +1,98 @@
+# Phonics Tutor Character Image Guide
+
+## Character Image Requirements
+
+For best results with SadTalker, your character image should:
+
+1. **Show the full face clearly**
+   - Front-facing or slight angle
+   - Both eyes visible
+   - Mouth area clearly visible
+
+2. **Have good lighting**
+   - Even lighting on the face
+   - No harsh shadows
+   - Clear contrast
+
+3. **Be high resolution**
+   - Minimum 512x512 pixels
+   - 1024x1024 or higher recommended
+   - Clear, sharp image
+
+4. **Have a simple background**
+   - Solid color or simple gradient
+   - No competing elements
+   - Professional appearance
+
+## Character Options
+
+### Option 1: Free Stock Photo Sites
+- Unsplash (https://unsplash.com)
+- Pexels (https://pexels.com)
+- Pixabay (https://pixabay.com)
+
+Search terms: "cartoon teacher", "friendly character", "educational mascot"
+
+### Option 2: AI Image Generation (Free)
+- Bing Image Creator (https://www.bing.com/create)
+- Canva (https://www.canva.com)
+
+Prompt suggestions:
+- "Friendly cartoon teacher for kids, simple background, front view, educational"
+- "Cute animated tutor character, colorful, child-friendly design"
+- "Professional cartoon educator, warm smile, approachable"
+
+### Option 3: Draw/Create Yourself
+- Use any drawing software
+- Simple cartoon style works well
+- Consistent appearance is key
+
+## File Specifications
+
+- **Format:** PNG or JPG
+- **Filename:** tutor_reference.png
+- **Location:** backend/static/characters/tutor_reference.png
+- **Size:** 1024x1024 pixels recommended
+- **Aspect Ratio:** 1:1 (square)
+
+## Example Character Types That Work Well
+
+1. **Cartoon Teacher**
+   - Friendly appearance
+   - Professional but approachable
+   - Clear facial features
+
+2. **Animated Mascot**
+   - Fun and engaging
+   - Kid-friendly design
+   - Exaggerated expressions
+
+3. **Simple Illustrated Character**
+   - Clean lines
+   - Bright colors
+   - Clear mouth area
+
+## What to Avoid
+
+- ❌ Profile views (side of face)
+- ❌ Sunglasses or face coverings
+- ❌ Poor lighting
+- ❌ Busy backgrounds
+- ❌ Low resolution
+- ❌ Extreme angles
+- ❌ Multiple people in one image
+
+## Temporary Placeholder
+
+If you want to test quickly, you can use any clear portrait photo as a temporary placeholder. Just ensure:
+- The person is looking directly at the camera
+- The mouth area is clearly visible
+- The lighting is good
+
+Replace it with your final character design later.
+
+---
+
+**Current Status:** Looking for character image
+**Target Location:** backend/static/characters/tutor_reference.png
+**Recommended Size:** 1024x1024 pixels

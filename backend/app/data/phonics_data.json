@@ -1,0 +1,535 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Phonics data for NeuroVidya dyslexia learning platform",
+    "lastUpdated": "2026-05-13"
+  },
+  "letters": [
+    {
+      "id": "A",
+      "letter": "A",
+      "phonemes": [
+        {
+          "symbol": "æ",
+          "sound": "short_a",
+          "exampleWords": ["apple", "cat", "hat"],
+          "mouthPosition": "Open mouth wide, tongue flat and low",
+          "commonMistakes": ["Pronouncing as 'ay'", "Not opening mouth wide enough"],
+          "difficulty": "easy"
+        },
+        {
+          "symbol": "eɪ",
+          "sound": "long_a",
+          "exampleWords": ["cake", "make", "late"],
+          "mouthPosition": "Jaw drops then closes, tongue moves forward",
+          "commonMistakes": ["Pronouncing as short 'a'", "Not moving jaw enough"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Big round mouth opening",
+      "practiceTips": ["Exaggerate mouth opening", "Hold sound for 2 seconds"]
+    },
+    {
+      "id": "B",
+      "letter": "B",
+      "phonemes": [
+        {
+          "symbol": "b",
+          "sound": "b",
+          "exampleWords": ["ball", "book", "baby"],
+          "mouthPosition": "Lips pressed together, then release with burst of air",
+          "commonMistakes": ["Too quiet", "Not pressing lips firmly"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Lips pressed together tightly",
+      "practiceTips": ["Feel the air burst", "Make it short and sharp"]
+    },
+    {
+      "id": "C",
+      "letter": "C",
+      "phonemes": [
+        {
+          "symbol": "k",
+          "sound": "hard_c",
+          "exampleWords": ["cat", "cup", "car"],
+          "mouthPosition": "Back of tongue touches soft palate",
+          "commonMistakes": ["Pronouncing as 's'", "Too soft"],
+          "difficulty": "medium"
+        },
+        {
+          "symbol": "s",
+          "sound": "soft_c",
+          "exampleWords": ["city", "cent", "cycle"],
+          "mouthPosition": "Tongue near teeth, air flows through",
+          "commonMistakes": ["Pronouncing as 'k'", "Hissing too much"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Two different mouth positions",
+      "practiceTips": ["Notice what letter follows", "Hard before a, o, u; soft before e, i, y"]
+    },
+    {
+      "id": "D",
+      "letter": "D",
+      "phonemes": [
+        {
+          "symbol": "d",
+          "sound": "d",
+          "exampleWords": ["dog", "door", "day"],
+          "mouthPosition": "Tongue touches roof of mouth behind teeth",
+          "commonMistakes": ["Pronouncing as 't'", "Too soft like 'th'"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Tongue tapping roof of mouth",
+      "practiceTips": ["Feel tongue tap", "Voice should be on"]
+    },
+    {
+      "id": "E",
+      "letter": "E",
+      "phonemes": [
+        {
+          "symbol": "ɛ",
+          "sound": "short_e",
+          "exampleWords": ["egg", "bed", "pen"],
+          "mouthPosition": "Jaw slightly open, tongue forward",
+          "commonMistakes": ["Pronouncing as 'ay'", "Not opening mouth enough"],
+          "difficulty": "easy"
+        },
+        {
+          "symbol": "i",
+          "sound": "long_e",
+          "exampleWords": ["eat", "see", "bee"],
+          "mouthPosition": "Sides of tongue touch upper teeth",
+          "commonMistakes": ["Pronouncing as short 'e'", "Not stretching enough"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Stretched smile for long E",
+      "practiceTips": ["Stretch mouth wide for long E", "Keep it short for short E"]
+    },
+    {
+      "id": "F",
+      "letter": "F",
+      "phonemes": [
+        {
+          "symbol": "f",
+          "sound": "f",
+          "exampleWords": ["fish", "fun", "four"],
+          "mouthPosition": "Bottom lip touches top teeth, air flows through",
+          "commonMistakes": ["Too quiet", "Using voice (should be voiceless)"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Bite lower lip gently",
+      "practiceTips": ["Feel the air on lip", "No voice should be used"]
+    },
+    {
+      "id": "G",
+      "letter": "G",
+      "phonemes": [
+        {
+          "symbol": "ɡ",
+          "sound": "hard_g",
+          "exampleWords": ["goat", "girl", "gate"],
+          "mouthPosition": "Back of tongue touches soft palate",
+          "commonMistakes": ["Pronouncing as 'j'", "Too soft"],
+          "difficulty": "medium"
+        },
+        {
+          "symbol": "dʒ",
+          "sound": "soft_g",
+          "exampleWords": ["giant", "gym", "gem"],
+          "mouthPosition": "Tongue curved up, air flows through",
+          "commonMistakes": ["Pronouncing as hard 'g'", "Too harsh"],
+          "difficulty": "hard"
+        }
+      ],
+      "visualAid": "Back of mouth for hard G",
+      "practiceTips": ["Hard before a, o, u; soft before e, i, y"]
+    },
+    {
+      "id": "H",
+      "letter": "H",
+      "phonemes": [
+        {
+          "symbol": "h",
+          "sound": "h",
+          "exampleWords": ["hat", "house", "help"],
+          "mouthPosition": "Open mouth, breath out gently",
+          "commonMistakes": ["Too loud", "Pronouncing as 'huh'", "Not enough breath"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Open mouth with gentle breath",
+      "practiceTips": ["Feel the breath", "Keep it quiet and gentle"]
+    },
+    {
+      "id": "I",
+      "letter": "I",
+      "phonemes": [
+        {
+          "symbol": "ɪ",
+          "sound": "short_i",
+          "exampleWords": ["pig", "sit", "win"],
+          "mouthPosition": "Jaw slightly open, tongue centered",
+          "commonMistakes": ["Pronouncing as 'eye'", "Too tight"],
+          "difficulty": "medium"
+        },
+        {
+          "symbol": "aɪ",
+          "sound": "long_i",
+          "exampleWords": ["ice", "like", "time"],
+          "mouthPosition": "Jaw drops then closes, gliding sound",
+          "commonMistakes": ["Pronouncing as short 'i'", "Not gliding enough"],
+          "difficulty": "hard"
+        }
+      ],
+      "visualAid": "Jaw moves up and down",
+      "practiceTips": ["Long I is a diphthong (two sounds)", "Feel jaw movement"]
+    },
+    {
+      "id": "J",
+      "letter": "J",
+      "phonemes": [
+        {
+          "symbol": "dʒ",
+          "sound": "j",
+          "exampleWords": ["jump", "jug", "jet"],
+          "mouthPosition": "Tongue curved up, air flows through",
+          "commonMistakes": ["Pronouncing as 'ch'", "Too soft", "Too harsh"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Tongue curves upward",
+      "practiceTips": ["Voice should be on", "Feel tongue touch roof"]
+    },
+    {
+      "id": "K",
+      "letter": "K",
+      "phonemes": [
+        {
+          "symbol": "k",
+          "sound": "k",
+          "exampleWords": ["kite", "king", "key"],
+          "mouthPosition": "Back of tongue touches soft palate",
+          "commonMistakes": ["Too soft", "Adding extra 'uh' sound"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Back of mouth closure",
+      "practiceTips": ["Make it sharp and clean", "No extra sounds"]
+    },
+    {
+      "id": "L",
+      "letter": "L",
+      "phonemes": [
+        {
+          "symbol": "l",
+          "sound": "l",
+          "exampleWords": ["lion", "lamp", "love"],
+          "mouthPosition": "Tongue tip touches roof of mouth",
+          "commonMistakes": ["Pronouncing as 'w'", "Not touching roof"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Tongue tip reaches up",
+      "practiceTips": ["Feel tongue touch roof", "Drop jaw slightly"]
+    },
+    {
+      "id": "M",
+      "letter": "M",
+      "phonemes": [
+        {
+          "symbol": "m",
+          "sound": "m",
+          "exampleWords": ["moon", "man", "milk"],
+          "mouthPosition": "Lips pressed together, hum",
+          "commonMistakes": ["Too quiet", "Opening lips too early"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Lips together, humming",
+      "practiceTips": ["Feel nose vibrate", "Keep lips closed"]
+    },
+    {
+      "id": "N",
+      "letter": "N",
+      "phonemes": [
+        {
+          "symbol": "n",
+          "sound": "n",
+          "exampleWords": ["nest", "nine", "net"],
+          "mouthPosition": "Tongue touches roof of mouth",
+          "commonMistakes": ["Pronouncing as 'm'", "Not touching roof"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Tongue touches behind teeth",
+      "practiceTips": ["Feel nose vibrate", "Tongue tip up"]
+    },
+    {
+      "id": "O",
+      "letter": "O",
+      "phonemes": [
+        {
+          "symbol": "ɑ",
+          "sound": "short_o",
+          "exampleWords": ["hot", "dog", "top"],
+          "mouthPosition": "Jaw drops, tongue flat and back",
+          "commonMistakes": ["Pronouncing as 'oh'", "Not opening enough"],
+          "difficulty": "medium"
+        },
+        {
+          "symbol": "oʊ",
+          "sound": "long_o",
+          "exampleWords": ["boat", "goat", "home"],
+          "mouthPosition": "Rounded lips, jaw moves slightly",
+          "commonMistakes": ["Pronouncing as short 'o'", "Not rounding lips"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Rounded lips like blowing bubbles",
+      "practiceTips": ["Round lips for long O", "Drop jaw for short O"]
+    },
+    {
+      "id": "P",
+      "letter": "P",
+      "phonemes": [
+        {
+          "symbol": "p",
+          "sound": "p",
+          "exampleWords": ["pen", "pig", "pan"],
+          "mouthPosition": "Lips pressed together, pop open",
+          "commonMistakes": ["Too quiet", "No burst of air", "Adding voice"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Lips pressed tight, then pop",
+      "practiceTips": ["Feel air burst", "No voice should be used"]
+    },
+    {
+      "id": "Q",
+      "letter": "Q",
+      "phonemes": [
+        {
+          "symbol": "kw",
+          "sound": "qu",
+          "exampleWords": ["queen", "quiet", "quit"],
+          "mouthPosition": "Lips rounded for 'w', tongue back for 'k'",
+          "commonMistakes": ["Pronouncing as 'k'", "Forgetting the 'w'"],
+          "difficulty": "hard"
+        }
+      ],
+      "visualAid": "Combination of K + W sounds",
+      "practiceTips": ["Two sounds blended together", "Round lips at end"]
+    },
+    {
+      "id": "R",
+      "letter": "R",
+      "phonemes": [
+        {
+          "symbol": "r",
+          "sound": "r",
+          "exampleWords": ["rabbit", "run", "red"],
+          "mouthPosition": "Tongue curled back, lips slightly rounded",
+          "commonMistakes": ["Pronouncing as 'w'", "Not curling tongue"],
+          "difficulty": "hard"
+        }
+      ],
+      "visualAid": "Tongue curls back in mouth",
+      "practiceTips": ["Pull tongue back", "Don't let it touch anything"]
+    },
+    {
+      "id": "S",
+      "letter": "S",
+      "phonemes": [
+        {
+          "symbol": "s",
+          "sound": "s",
+          "exampleWords": ["sun", "snake", "sock"],
+          "mouthPosition": "Tongue near teeth, air flows smoothly",
+          "commonMistakes": ["Too harsh like 'sh'", "Adding extra 'huh'", "Not enough air"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Tongue nearly touching teeth",
+      "practiceTips": ["Make it smooth and continuous", "No voice should be used"]
+    },
+    {
+      "id": "T",
+      "letter": "T",
+      "phonemes": [
+        {
+          "symbol": "t",
+          "sound": "t",
+          "exampleWords": ["top", "ten", "tea"],
+          "mouthPosition": "Tongue touches roof behind teeth",
+          "commonMistakes": ["Adding extra 'uh' sound", "Too soft"],
+          "difficulty": "easy"
+        }
+      ],
+      "visualAid": "Tongue taps roof of mouth",
+      "practiceTips": ["Make it sharp and clean", "Feel tongue tap"]
+    },
+    {
+      "id": "U",
+      "letter": "U",
+      "phonemes": [
+        {
+          "symbol": "ʌ",
+          "sound": "short_u",
+          "exampleWords": ["cup", "sun", "up"],
+          "mouthPosition": "Jaw slightly open, tongue centered",
+          "commonMistakes": ["Pronouncing as 'oo'", "Not relaxing enough"],
+          "difficulty": "medium"
+        },
+        {
+          "symbol": "u",
+          "sound": "long_u",
+          "exampleWords": ["cube", "music", "tune"],
+          "mouthPosition": "Lips very rounded, tongue back",
+          "commonMistakes": ["Pronouncing as short 'u'", "Not rounding lips enough"],
+          "difficulty": "hard"
+        }
+      ],
+      "visualAid": "Rounded lips for long U",
+      "practiceTips": ["Round lips tightly for long U", "Relax for short U"]
+    },
+    {
+      "id": "V",
+      "letter": "V",
+      "phonemes": [
+        {
+          "symbol": "v",
+          "sound": "v",
+          "exampleWords": ["van", "vase", "vine"],
+          "mouthPosition": "Bottom lip touches top teeth, air flows through",
+          "commonMistakes": ["Pronouncing as 'f'", "Too quiet", "Not using voice"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Bite lower lip and voice on",
+      "practiceTips": ["Voice must be on", "Feel lip vibrate"]
+    },
+    {
+      "id": "W",
+      "letter": "W",
+      "phonemes": [
+        {
+          "symbol": "w",
+          "sound": "w",
+          "exampleWords": ["water", "wind", "wish"],
+          "mouthPosition": "Lips very rounded, then open",
+          "commonMistakes": ["Pronouncing as 'v'", "Not rounding enough"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Round lips tightly then open",
+      "practiceTips": ["Start with tight circle", "Release into vowel"]
+    },
+    {
+      "id": "X",
+      "letter": "X",
+      "phonemes": [
+        {
+          "symbol": "ks",
+          "sound": "x",
+          "exampleWords": ["box", "fox", "six"],
+          "mouthPosition": "Back for 'k', front for 's'",
+          "commonMistakes": ["Pronouncing as 'z'", "Missing first sound"],
+          "difficulty": "hard"
+        }
+      ],
+      "visualAid": "Two sounds blended together",
+      "practiceTips": ["Say 'k' then 's' quickly", "Both sounds should be clear"]
+    },
+    {
+      "id": "Y",
+      "letter": "Y",
+      "phonemes": [
+        {
+          "symbol": "j",
+          "sound": "consonant_y",
+          "exampleWords": ["yes", "yellow", "you"],
+          "mouthPosition": "Tongue curved up, sides touch teeth",
+          "commonMistakes": ["Pronouncing as 'ee'", "Too harsh"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Tongue touches upper teeth",
+      "practiceTips": ["Voice should be on", "Keep it smooth"]
+    },
+    {
+      "id": "Z",
+      "letter": "Z",
+      "phonemes": [
+        {
+          "symbol": "z",
+          "sound": "z",
+          "exampleWords": ["zoo", "zebra", "zipper"],
+          "mouthPosition": "Tongue near teeth, air flows with voice",
+          "commonMistakes": ["Pronouncing as 's'", "Not using voice"],
+          "difficulty": "medium"
+        }
+      ],
+      "visualAid": "Like 'S' but with voice",
+      "practiceTips": ["Voice must be on", "Feel tongue vibrate"]
+    }
+  ],
+  "commonDigraphs": [
+    {
+      "id": "SH",
+      "letters": "SH",
+      "symbol": "ʃ",
+      "exampleWords": ["ship", "fish", "wish"],
+      "mouthPosition": "Tongue pulled back, lips rounded",
+      "difficulty": "medium"
+    },
+    {
+      "id": "CH",
+      "letters": "CH",
+      "symbol": "tʃ",
+      "exampleWords": ["chip", "chair", "watch"],
+      "mouthPosition": "Tongue touches roof, then releases",
+      "difficulty": "medium"
+    },
+    {
+      "id": "TH",
+      "letters": "TH",
+      "symbol": "θ",
+      "exampleWords": ["think", "thumb", "bath"],
+      "mouthPosition": "Tongue between teeth, air flows through",
+      "difficulty": "hard",
+      "note": "Voiceless TH"
+    },
+    {
+      "id": "TH_voiced",
+      "letters": "TH",
+      "symbol": "ð",
+      "exampleWords": ["this", "that", "mother"],
+      "mouthPosition": "Tongue between teeth, voice on",
+      "difficulty": "hard",
+      "note": "Voiced TH"
+    },
+    {
+      "id": "PH",
+      "letters": "PH",
+      "symbol": "f",
+      "exampleWords": ["phone", "photo", "elephant"],
+      "mouthPosition": "Bottom lip touches top teeth",
+      "difficulty": "medium",
+      "note": "Sounds like F"
+    },
+    {
+      "id": "NG",
+      "letters": "NG",
+      "symbol": "ŋ",
+      "exampleWords": ["sing", "ring", "long"],
+      "mouthPosition": "Back of tongue touches soft palate",
+      "difficulty": "hard",
+      "note": "One sound, not 'n' + 'g'"
+    }
+  ]
+}

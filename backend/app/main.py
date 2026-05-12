@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Request
 
-from app.api import auth, assistant, progress, analytics, users, text, games, reading, words, diagrams, learning, spelling, images, reading_coach, story_summariser, ar_game
+from app.api import auth, assistant, progress, analytics, users, text, games, reading, words, diagrams, learning, spelling, images, reading_coach, story_summariser, ar_game, phonics_tutor
 from app.core.config import get_settings
 
 settings = get_settings()
@@ -46,6 +46,7 @@ app.include_router(images.router, prefix="/api/images", tags=["images"])
 app.include_router(reading_coach.router, prefix="/api/reading-coach", tags=["reading-coach"])
 app.include_router(story_summariser.router, prefix="/api/story-summariser", tags=["story-summariser"])
 app.include_router(ar_game.router, prefix="/api/ar-game", tags=["ar-game"])
+app.include_router(phonics_tutor.router, prefix="/api/phonics-tutor", tags=["phonics-tutor"])
 
 
 @app.get("/")

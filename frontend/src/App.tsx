@@ -19,6 +19,7 @@ const WordAnalysisPage = lazy(() => import('./pages/WordAnalysisPage').then(m =>
 const ReadingCoachPage = lazy(() => import('./pages/ReadingCoachPage').then(m => ({ default: m.ReadingCoachPage })))
 const StorySummariserPage = lazy(() => import('./pages/StorySummariserPage').then(m => ({ default: m.StorySummariserPage })))
 const ARGamePage = lazy(() => import('./pages/ARGamePage').then(m => ({ default: m.ARGamePage })))
+const PhonicsTutorPage = lazy(() => import('./pages/PhonicsTutorPage'))
 
 // Loading fallback component
 const PageLoading = () => (
@@ -136,6 +137,14 @@ function App() {
                   <MainLayout showQuickSettings={true}>
                     <ARGamePage />
                   </MainLayout>
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/phonics-tutor"
+              element={
+                <ProtectedRoute>
+                  <PhonicsTutorPage />
                 </ProtectedRoute>
               }
             />
