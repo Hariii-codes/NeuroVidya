@@ -1,0 +1,272 @@
+/* Dyslexia-First Input Component Styles */
+
+.dyslexia-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+}
+
+.dyslexia-input-wrapper--full-width {
+  width: 100%;
+}
+
+/* ============================================
+   LABEL
+   ============================================ */
+
+.dyslexia-input__label {
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--dyslexia-text-primary, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dyslexia-input__label::after {
+  content: '';
+}
+
+.dyslexia-input__label:has(+ * > [required])::after {
+  content: ' *';
+  color: var(--dyslexia-accent, #3b82f6);
+}
+
+/* ============================================
+   INPUT CONTAINER
+   ============================================ */
+
+.dyslexia-input__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   INPUT STYLES
+   ============================================ */
+
+.dyslexia-input,
+.dyslexia-select {
+  width: 100%;
+  font-family: var(--dyslexia-font-family, 'Lexend', sans-serif);
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  color: var(--dyslexia-text-primary, #1f2937);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* Variant: Outlined */
+.dyslexia-input--outlined {
+  background-color: transparent;
+  border-width: 3px;
+}
+
+/* Variant: Filled */
+.dyslexia-input--filled {
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+  border-color: transparent;
+}
+
+.dyslexia-input--filled:focus {
+  border-color: var(--dyslexia-accent, #3b82f6);
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+}
+
+/* Placeholder */
+.dyslexia-input::placeholder,
+.dyslexia-textarea::placeholder {
+  color: var(--dyslexia-text-muted, #9ca3af);
+}
+
+/* Focus State - High Contrast */
+.dyslexia-input:focus,
+.dyslexia-select:focus,
+.dyslexia-textarea:focus {
+  outline: none;
+  border-color: var(--dyslexia-accent, #3b82f6);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Error State */
+.dyslexia-input-wrapper--error .dyslexia-input,
+.dyslexia-input-wrapper--error .dyslexia-select,
+.dyslexia-input-wrapper--error .dyslexia-textarea {
+  border-color: #EF4444;
+}
+
+.dyslexia-input-wrapper--error .dyslexia-input:focus,
+.dyslexia-input-wrapper--error .dyslexia-select:focus,
+.dyslexia-input-wrapper--error .dyslexia-textarea:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Disabled State */
+.dyslexia-input:disabled,
+.dyslexia-select:disabled,
+.dyslexia-textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+}
+
+/* ============================================
+   SIZE VARIANTS
+   ============================================ */
+
+.dyslexia-input-wrapper--sm .dyslexia-input,
+.dyslexia-input-wrapper--sm .dyslexia-select,
+.dyslexia-input-wrapper--sm .dyslexia-textarea {
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+}
+
+.dyslexia-input-wrapper--md .dyslexia-input,
+.dyslexia-input-wrapper--md .dyslexia-select,
+.dyslexia-input-wrapper--md .dyslexia-textarea {
+  padding: 0.75rem 1rem;
+  min-height: 52px;
+}
+
+.dyslexia-input-wrapper--lg .dyslexia-input,
+.dyslexia-input-wrapper--lg .dyslexia-select,
+.dyslexia-input-wrapper--lg .dyslexia-textarea {
+  padding: 1rem 1.25rem;
+  min-height: 60px;
+}
+
+/* ============================================
+   WITH ICON
+   ============================================ */
+
+.dyslexia-input--has-icon {
+  padding-left: 3rem !important;
+}
+
+.dyslexia-input__icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--dyslexia-text-secondary, #4b5563);
+  font-size: 1.25rem;
+}
+
+/* ============================================
+   PASSWORD TOGGLE
+   ============================================ */
+
+.dyslexia-input--has-toggle {
+  padding-right: 3rem !important;
+}
+
+.dyslexia-input__toggle {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--dyslexia-text-secondary, #4b5563);
+  cursor: pointer;
+  border-radius: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.dyslexia-input__toggle:hover {
+  color: var(--dyslexia-accent, #3b82f6);
+}
+
+.dyslexia-input__toggle:focus-visible {
+  outline: 2px solid var(--dyslexia-accent, #3b82f6);
+  outline-offset: 2px;
+}
+
+.dyslexia-input__toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ============================================
+   TEXTAREA
+   ============================================ */
+
+.dyslexia-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ============================================
+   SELECT
+   ============================================ */
+
+.dyslexia-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%234b5563'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.25rem;
+  padding-right: 3rem !important;
+  cursor: pointer;
+}
+
+.dyslexia-select:focus {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%233b82f6'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* ============================================
+   HELPER TEXT & ERROR
+   ============================================ */
+
+.dyslexia-input__error,
+.dyslexia-input__helper {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+}
+
+.dyslexia-input__error {
+  color: #EF4444;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dyslexia-input__error::before {
+  content: '⚠';
+  font-size: 1em;
+}
+
+.dyslexia-input__helper {
+  color: var(--dyslexia-text-secondary, #4b5563);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 640px) {
+  .dyslexia-input-wrapper--full-width {
+    width: 100%;
+  }
+
+  .dyslexia-input,
+  .dyslexia-select {
+    font-size: 16px !important; /* Prevent auto-zoom on iOS */
+  }
+}

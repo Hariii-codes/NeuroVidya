@@ -1,0 +1,229 @@
+/* Visual Theme Settings Component Styles */
+
+.visual-theme-settings {
+  width: 100%;
+}
+
+/* Header */
+.visual-theme-settings__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--dyslexia-text-secondary, #4b5563);
+}
+
+.visual-theme-settings__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.visual-theme-settings__title {
+  margin: 0;
+  font-size: 1.25em;
+  font-weight: 600;
+  color: var(--dyslexia-text-primary, #1f2937);
+}
+
+/* Sections */
+.visual-theme-settings__section {
+  margin-bottom: 1.5rem;
+}
+
+.visual-theme-settings__section:last-child {
+  margin-bottom: 0;
+}
+
+/* Theme Options */
+.visual-theme-settings__themes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.visual-theme-option {
+  padding: 1rem;
+  border: 3px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+  text-align: center;
+}
+
+.visual-theme-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.visual-theme-option:focus-visible {
+  outline: 3px solid var(--dyslexia-accent, #3b82f6);
+  outline-offset: 2px;
+}
+
+.visual-theme-option--active {
+  border-color: var(--dyslexia-accent, #3b82f6);
+  box-shadow: 0 0 0 3px var(--dyslexia-accent, #3b82f6);
+}
+
+/* Color Options */
+.visual-theme-settings__colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.visual-theme-color-option {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  position: relative;
+  padding: 0;
+  border: 3px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.visual-theme-color-option:hover {
+  transform: scale(1.1);
+}
+
+.visual-theme-color-option:focus-visible {
+  outline: 3px solid var(--dyslexia-text-primary, #1f2937);
+  outline-offset: 2px;
+}
+
+.visual-theme-color-option--active {
+  border-color: var(--dyslexia-text-primary, #1f2937);
+  box-shadow: 0 0 0 3px var(--dyslexia-accent, #3b82f6);
+}
+
+.visual-theme-color-option__check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Contrast Options */
+.visual-theme-settings__contrast {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.visual-theme-contrast-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--dyslexia-bg-primary, #F7F3E9);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.visual-theme-contrast-option:hover {
+  border-color: var(--dyslexia-accent, #3b82f6);
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+}
+
+.visual-theme-contrast-option:focus-visible {
+  outline: 3px solid var(--dyslexia-accent, #3b82f6);
+  outline-offset: 2px;
+}
+
+.visual-theme-contrast-option--active {
+  background-color: var(--dyslexia-accent, #3b82f6);
+  border-color: var(--dyslexia-accent, #3b82f6);
+  color: #ffffff;
+}
+
+.visual-theme-contrast-option__icon {
+  font-size: 1.25rem;
+  min-width: 1.5rem;
+}
+
+.visual-theme-contrast-option__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.visual-theme-contrast-option__label {
+  font-weight: 500;
+}
+
+.visual-theme-contrast-option__description {
+  font-size: 0.85em;
+  opacity: 0.8;
+}
+
+/* Preview */
+.visual-theme-settings__preview {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px dashed var(--dyslexia-text-secondary, #4b5563);
+}
+
+.visual-theme-settings__preview-box {
+  padding: 1.5rem;
+  background-color: var(--dyslexia-bg-secondary, #ffffff);
+  border: 2px solid var(--dyslexia-text-secondary, #4b5563);
+  border-radius: 0.5rem;
+}
+
+.visual-theme-settings__preview-text {
+  margin: 0 0 1rem 0;
+}
+
+.visual-theme-settings__preview-elements {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.visual-theme-preview-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9em;
+  font-weight: 500;
+  background-color: var(--dyslexia-accent, #3b82f6);
+  color: #ffffff;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.visual-theme-preview-badge {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.85em;
+  font-weight: 500;
+  background-color: var(--dyslexia-focus-yellow, #fbbf24);
+  border-radius: 0.25rem;
+}
+
+.visual-theme-preview-link {
+  color: var(--dyslexia-accent, #3b82f6);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .visual-theme-settings__themes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .visual-theme-settings__contrast {
+    flex-direction: column;
+  }
+}
